@@ -21,7 +21,7 @@ Todos os testes devem ser realizados para garantir o bom funcionamento dos event
 * envia-console-log2.handler.ts
 * customer-created.event.ts
 
-#### Para a parte 1 foi criado as classes
+#### Para a parte 2 foi criado as classes
 
 * envia-console-log.handler.ts
 * customer-address-changed.ts
@@ -30,10 +30,22 @@ Todos os testes devem ser realizados para garantir o bom funcionamento dos event
 
 * customer-event.spec.ts
 
-Foi criado baseado nas aulas os seguintes testes
+#### Descrição dos testes implementados
 
 1. o registro do evento quando um customer é criado.
 2. o desregistro do evento quando um customer está criado.
 3. a notificação do evento quando um endereço do customer é alterado.
 
 
+#### Executando o teste
+
+1. Vá até o diretório do teste
+```
+cd src/domain/customer/event
+```
+
+2. Em seguida, execute o seguinte comando:
+
+```
+npm test customer-event.spec.ts
+```

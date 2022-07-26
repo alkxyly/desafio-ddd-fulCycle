@@ -37,7 +37,7 @@ Todos os testes devem ser realizados para garantir o bom funcionamento dos event
 3. a notificação do evento quando um endereço do customer é alterado.
 
 
-#### Executando o teste
+## Executando o teste
 
 1. Vá até o diretório do teste
 ```

@@ -9,16 +9,11 @@ export default class Customer {
   private _address!: Address;
   private _active: boolean = false;
   private _rewardPoints: number = 0;
-  private _enviaConsoleLogHandler: EnviaConsoleLogHandler;
-  private _eventDispatcher: EventDispatcher;
 
   constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
     this.validate();
-
-    this._enviaConsoleLogHandler =  new EnviaConsoleLogHandler();
-    this._eventDispatcher = new EventDispatcher();
   }
 
   get id(): string {
@@ -50,27 +45,8 @@ export default class Customer {
   get Address(): Address {
     return this._address;
   }
-
-  get enviaConsoleLogHandler(): EnviaConsoleLogHandler {
-    return this._enviaConsoleLogHandler;
-  }
-
-  get eventDispatcher(): EventDispatcher {
-    return this._eventDispatcher;
-  }
-  
   changeAddress(address: Address) {    
     this._address = address;
-    
-    this._eventDispatcher.register("CustomerAddressChangedEvent", this._enviaConsoleLogHandler); 
-
-    const customerAddressChangedEvent = new CustomerAddressChangedEvent({
-      id: this._id,
-      name: this._name,
-      address: this._address
-    }); 
-
-    this._eventDispatcher.notify(customerAddressChangedEvent);
   }
 
   isActive(): boolean {
